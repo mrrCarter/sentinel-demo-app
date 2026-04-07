@@ -1,0 +1,27 @@
+{
+  "name": "sentinel-demo-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "sentinel:start": "echo \"Sentinelayer artifacts are ready. Open AGENT_HANDOFF_PROMPT.md and start your coding agent.\"",
+    "sentinel:omargate": "npx sentinelayer-cli@latest /omargate deep --path .",
+    "sentinel:omargate:json": "npx sentinelayer-cli@latest /omargate deep --path . --json",
+    "sentinel:audit": "npx sentinelayer-cli@latest /audit --path .",
+    "sentinel:audit:json": "npx sentinelayer-cli@latest /audit --path . --json",
+    "sentinel:persona:builder": "npx sentinelayer-cli@latest /persona orchestrator --mode builder --path .",
+    "sentinel:persona:reviewer": "npx sentinelayer-cli@latest /persona orchestrator --mode reviewer --path .",
+    "sentinel:persona:hardener": "npx sentinelayer-cli@latest /persona orchestrator --mode hardener --path .",
+    "sentinel:apply": "npx sentinelayer-cli@latest /apply --plan tasks/todo.md --path ."
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "dotenv": "^16.4.7",
+    "jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {},
+  "type": "module"
+}

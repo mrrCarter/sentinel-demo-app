@@ -1,0 +1,19 @@
+name: Omar Gate (BYOK Mode)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  byok-note:
+    runs-on: ubuntu-latest
+    steps:
+      - name: BYOK mode reminder
+        run: |
+          echo "Sentinelayer token is not configured in BYOK mode."
+          echo "Use local commands: npx sentinelayer-cli@latest /audit --path ."
+          echo "Set SENTINELAYER_TOKEN and wire sentinelayer_token to enable Omar Gate action later."
+
